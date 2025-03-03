@@ -52,6 +52,11 @@
           <template #other>More+</template>
         </common-title>
       </view>
+			<view class="theme">
+				<view class="theme-item" v-for="temp in 8">
+					<common-card></common-card>
+				</view>
+			</view>
     </view>
 	</view>
 </template>
@@ -156,6 +161,13 @@
     .title2{
       margin-top: 20rpx;
     }
+		.theme{
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			.theme-item{
+				
+			}
+		}
   }
 }
 </style>
