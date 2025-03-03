@@ -56,6 +56,7 @@
 				<view class="theme-item" v-for="temp in 8">
 					<common-card></common-card>
 				</view>
+        <common-card isMore></common-card>
 			</view>
     </view>
 	</view>
@@ -135,13 +136,13 @@
   .select{
     margin-left: 30rpx;
     margin-top: 10rpx;
-
+    padding-bottom: 200rpx;
     .date{
       margin-left: 5rpx;
     }
 
     .gallary{
-      margin-top: 30rpx;
+      margin-top: 20rpx;
       scroll-view{
         white-space: nowrap;
         .photo{
@@ -154,7 +155,7 @@
           }
         }
         .photo:last-child{
-          margin-right: 30rpx;
+          margin-right: 10rpx;
         }
       }
     }
@@ -162,10 +163,15 @@
       margin-top: 20rpx;
     }
 		.theme{
+      margin-top: 20rpx;
+      padding-right: 30rpx;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15rpx;
+      width: 100%;
 			.theme-item{
-				
+				width: 100%;
+        height: 100%;
 			}
 		}
   }
