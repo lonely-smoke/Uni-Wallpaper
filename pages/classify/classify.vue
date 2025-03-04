@@ -1,5 +1,5 @@
 <template>
-  <view class="classify-layout">
+  <view class="classify-layout colorBg">
     <common-card v-for="index in 15"></common-card>
   </view>
 </template>
@@ -10,7 +10,7 @@
 
 <style lang="scss" scoped>
   .classify-layout{
-    margin: 15rpx 30rpx;
+    padding: 15rpx 30rpx;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15rpx;

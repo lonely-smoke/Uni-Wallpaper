@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content colorBg">
     <view class="banner">
       <swiper indicator-dots indicator-color="rgba(255, 255, 255, 50%)" indicator-active-color="rgba(255, 255, 255, 100%)" autoplay circular>
         <swiper-item>
@@ -69,8 +69,8 @@
 <style lang="scss" scoped>
 .content{
   .banner{
-    margin-top: 20rpx;
-    margin-bottom: 30rpx;
+    padding-top: 20rpx;
+    padding-bottom: 30rpx;
     height: 340rpx;
     width: 100%;
     // display: flex;

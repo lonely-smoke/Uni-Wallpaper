@@ -1,30 +1,42 @@
 <template>
-	<view class="root">
-		<view class="left">
-			<uni-icons type="download-filled" color="green" size="50rpx"></uni-icons>
-			<view class="title">我的下载</view>
-		</view>
-		<view class="right">
-			<view class="num">11</view>
-			<uni-icons type="right" color="green" size="50rpx"></uni-icons>
-		</view>
-	</view>
+  <navigator url="">
+    <view class="root">
+    	<view class="left">
+    		<uni-icons :type="iconType" color="green" size="50rpx"></uni-icons>
+    		<view class="title">{{title}}</view>
+    	</view>
+    	<view class="right">
+    		<view class="num">{{num}}</view>
+    		<uni-icons type="right" color="green" size="50rpx"></uni-icons>
+    	</view>
+    </view>
+  </navigator>
 </template>
 
 <script setup>
-	
+	defineProps({
+    iconType: {
+      type: String,
+      default: "download-filled"
+    },
+    title: {
+      type: String,
+      default: "我的下载"
+    },
+    num: {
+      type: String,
+      default: ""
+    }
+  })
 </script>
 
 <style lang="scss" scoped>
 .root{
 	display: flex;
 	align-items: center;
-	background-color: #EEE;
+	background-color: #FFF;
 	height: 120rpx;
 	justify-content: space-between;
-	border-radius: 10rpx;
-	overflow: hidden;
-	box-shadow: 0 0 50rpx rgba(0, 0, 0, 0.04);
 	.right{
 		display: flex;
 		align-items: center;

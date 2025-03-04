@@ -1,3 +1,9 @@
 view{
   box-sizing: border-box;
 }
+.colorBg{
+  background: 
+  linear-gradient(to bottom, transparent, #fff 400rpx),
+  linear-gradient(to right, #fbc2eb 0%, #a6c1ee 100%);
+  
+}
