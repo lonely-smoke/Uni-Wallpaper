@@ -42,7 +42,7 @@
       <view class="gallary">
         <scroll-view scroll-x :show-scrollbar="false" enhanced>
           <view class="photo" v-for="temp in 9">
-            <image src="https://uy.wzznft.com/i/2025/03/02/za8egi.webp" mode="aspectFill"></image>
+            <image src="/common/images/classify2.jpg" mode="aspectFill"></image>
           </view>
         </scroll-view>
       </view>

@@ -1,13 +1,13 @@
 <template>
 	<view class="root">
-    <navigator url="" class="nav" v-if="!isMore">
+    <navigator url="/pages/list/list" class="nav" v-if="!isMore">
      <view class="view-pic">
         <image class="image-back" src="/common/images/classify1.jpg"></image>
       </view>
       <view class="view-bottom">帅哥靓仔</view>
       <view class="view-tip">1周前更新</view>     
     </navigator>
-    <navigator url="" class="nav-more" v-if="isMore">
+    <navigator url="/pages/classify/classify" open-type="switchTab" class="nav-more" v-if="isMore">
       <view class="view-pic">
         <image class="image-back" src="/common/images/more.jpg"></image>
       </view>
