@@ -1,5 +1,5 @@
 <template>
-  <navigator url="">
+  <navigator :url="navigateUrl">
     <view class="root">
     	<view class="left">
     		<uni-icons :type="iconType" color="green" size="50rpx"></uni-icons>
@@ -26,7 +26,11 @@
     num: {
       type: String,
       default: ""
-    }
+    },
+		navigateUrl: {
+			type: String,
+			default: ""
+		}
   })
 </script>
 

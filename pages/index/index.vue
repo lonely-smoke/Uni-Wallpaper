@@ -3,13 +3,13 @@
     <view class="banner">
       <swiper indicator-dots indicator-color="rgba(255, 255, 255, 50%)" indicator-active-color="rgba(255, 255, 255, 100%)" autoplay circular>
         <swiper-item>
-          <image src="/common/images/banner1.jpg" mode="aspectFit"></image>
+          <image src="/common/images/banner1.jpg" mode="aspectFill"></image>
         </swiper-item>
         <swiper-item>
-          <image src="/common/images/banner2.jpg" mode="aspectFit"></image>
+          <image src="/common/images/banner2.jpg" mode="aspectFill"></image>
         </swiper-item>
         <swiper-item>
-          <image src="/common/images/banner3.jpg" mode="aspectFit"></image>
+          <image src="/common/images/banner3.jpg" mode="aspectFill"></image>
         </swiper-item>
       </swiper>
     </view>
@@ -69,10 +69,11 @@
 <style lang="scss" scoped>
 .content{
   .banner{
-    padding-top: 20rpx;
-    padding-bottom: 30rpx;
+    margin: 20rpx 30rpx;
     height: 340rpx;
-    width: 100%;
+    width: 690rpx;
+    // padding-left: 30rpx;
+    // padding-right: 30rpx;
     // display: flex;
     // justify-content: center;
     swiper{
@@ -82,9 +83,10 @@
         display: flex;
         justify-content: center;
         image{
-          height: 340rpx;
-          width: 690rpx;
+          height: 100%;
+          width: 100%;
           border-radius: 20rpx;
+          overflow: hidden;
         }
       }
     }

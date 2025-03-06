@@ -6,12 +6,12 @@
     	<view class="address">来自于：山西</view>
     </view>
     <view class="nav1">
-    	<common-button class="bottomLine" iconType="download-filled" title="我的下载"></common-button>
+    	<common-button class="bottomLine" navigateUrl="/pages/list/list" iconType="download-filled" title="我的下载"></common-button>
       <!-- #ifndef MP-WEIXIN -->
-        <common-button iconType="star-filled" title="我的评分"></common-button>
+        <common-button iconType="star-filled" navigateUrl="/pages/list/list" title="我的评分"></common-button>
       <!-- #endif -->
       <!-- #ifdef MP-WEIXIN -->
-        <common-button class="bottomLine" iconType="star-filled" title="我的评分"></common-button>
+        <common-button class="bottomLine" iconType="star-filled" navigateUrl="/pages/list/list" title="我的评分"></common-button>
         <button open-type="contact">联系客服</button>
         <common-button iconType="person-filled" title="联系客服"></common-button>
       <!-- #endif -->
