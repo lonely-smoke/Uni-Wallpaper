@@ -16,7 +16,7 @@
     
     <view class="notice">
       <view class="left">
-        <uni-icons type="sound" size="40rpx" color="green"></uni-icons>
+        <uni-icons type="sound" size="40rpx"></uni-icons>
         <view>公告</view>
       </view>
       <view class="center">
@@ -35,7 +35,7 @@
       <common-title>
         <template #title>每日推荐</template>
         <template #other>
-          <uni-icons type="calendar" size="20" color="green"></uni-icons>
+          <uni-icons type="calendar" size="20"></uni-icons>
           <uni-dateformat class="date" :date="Date.now()" format="MM月dd日"></uni-dateformat>
         </template>
       </common-title>
@@ -68,6 +68,7 @@
 
 <style lang="scss" scoped>
 .content{
+  padding-top: 1rpx;
   .banner{
     margin: 20rpx 30rpx;
     height: 340rpx;
@@ -106,10 +107,15 @@
       justify-content: center;
       align-items: center;
       width: 140rpx;
-      color: green;
+      color: $color-main;
       font-size: 28rpx;
       font-weight: 1000;
       padding-left: 20rpx;
+      :deep(){
+        .uni-icons{
+          color: $color-main !important;
+        }
+      }
       view{
         padding-left: 3rpx;
       }
@@ -139,6 +145,11 @@
     margin-left: 30rpx;
     margin-top: 10rpx;
     padding-bottom: 200rpx;
+    :deep(){
+      .uni-icons{
+        color: $color-main !important;
+      }
+    }
     .date{
       margin-left: 5rpx;
     }

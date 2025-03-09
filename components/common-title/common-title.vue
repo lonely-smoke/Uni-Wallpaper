@@ -27,7 +27,8 @@
     margin-right: 30rpx;
     display: flex;
     align-items: center;
-    color: green;
+    // color: green;
+    color: $color-main;
   }
 }
 </style>
