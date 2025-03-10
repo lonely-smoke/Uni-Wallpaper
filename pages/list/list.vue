@@ -13,14 +13,13 @@
 
 <style lang="scss" scoped>
   .list{
-    // padding: 15rpx;
+    padding: 5rpx;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-	gap: 5rpx;
+		gap: 5rpx;
 	.img{
 		width: 100%;
-		height: fit-content;
-		opacity: 0.1;
+		display: block;
 	}
   }
 </style>
