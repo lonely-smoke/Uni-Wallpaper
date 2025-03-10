@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view class="list">
     
   </view>
 </template>
@@ -7,5 +7,5 @@
 <script setup>
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>
