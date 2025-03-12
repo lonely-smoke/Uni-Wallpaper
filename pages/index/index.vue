@@ -1,5 +1,6 @@
 <template>
 	<view class="content colorBg">
+    <common-navbar></common-navbar>
     <view class="banner">
       <swiper indicator-dots indicator-color="rgba(255, 255, 255, 50%)" indicator-active-color="rgba(255, 255, 255, 100%)" autoplay circular>
         <swiper-item>
