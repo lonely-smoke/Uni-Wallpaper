@@ -1,11 +1,11 @@
 <template>
 	<view class="preview">
     <swiper class="swiper">
-      <swiper-item class="imageContainer" v-for="index in 6">
+      <swiper-item class="imageContainer" v-for="index in 6" @click="switchMask">
         <image class="img" src="/common/images/preview2.jpg" mode="heightFix"></image>
       </swiper-item>
     </swiper>
-		<view class="mask">
+		<view class="mask" v-if="isMask">
 			<view class="index">3 / 9</view>
       <view class="time">
         <uni-dateformat :date="Date()" format="hh:mm"></uni-dateformat>
@@ -18,7 +18,7 @@
           <uni-icons class="tab1Icon" type="info" size="50rpx"></uni-icons>
           <view class=" tab1Text">信息</view>
         </view>
-        <view class="tab">
+        <view class="tab" @click="clickRemark">
           <uni-icons class="tab2Icon" type="star" size="50rpx"></uni-icons>
           <view class=" tab2Text">收藏</view>
         </view>
@@ -31,14 +31,14 @@
 	</view>
 	<uni-popup ref="popupInfo" type="bottom">
 		<view class="popup-info">
-			<scroll-view scroll-y>
 				<view class="popupTitle">
 					<view class="popupTitleLeft"></view>
 					<view class="popupTitleMiddle">壁纸信息</view>
-					<view class="popupTitleRight">
+					<view class="popupTitleRight" @click="closeInfo">
 						<uni-icons type="closeempty" size="35rpx"></uni-icons>
 					</view>
 				</view>
+			<scroll-view scroll-y class="scrollView">
 				<view class="popupItem">
 					<view class="popupItemTitle">壁纸ID</view>
 					<text class="popupItemContent">
@@ -60,7 +60,7 @@
 				<view class="popupItem">
 					<view class="popupItemTitle">评分</view>
 					<view class="popupItemContent comment">
-						<uni-rate></uni-rate>
+						<uni-rate readonly="true" allowHalf="true"></uni-rate>
 						<text class="commentText">5分</text>
 					</view>
 				</view>
@@ -79,12 +79,24 @@
 					</view>
 				</view>
 				<view class="popupBottum">
-					<text>
-						声明：这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明，这里是声明。
+					<text class="popupBottumText">
+						声明：这里是声明，这里是声明，这里是声明，这是声明，这里是声明，这里是声明，这里是声明。这里是声明，这里是声明，这里是声明，这是声明，这里是声明，这里是声明，这里是声明。这里是声明，这里是声明，这里是声明，这是声明，这里是声明，这里是声明，这里是声明。
 					</text>
 				</view>
-				
 			</scroll-view>
+		</view>
+	</uni-popup>
+	<uni-popup ref="popupRemark">
+		<view class="popupRemarkView">
+			<view class="popupTitle">
+				<view class="popupTitleLeft"></view>
+				<view class="popupTitleMiddle">壁纸信息</view>
+				<view class="popupTitleRight" @click="closeRemark">
+					<uni-icons type="closeempty" size="35rpx"></uni-icons>
+				</view>
+			</view>
+			<uni-rate class="popupRemarkRate" allowHalf="true" size="35" :readonly="false"></uni-rate>
+			<button class="popupRemarkBtn" @click="closeRemark">确定评分</button>
 		</view>
 	</uni-popup>
 </template>
@@ -92,11 +104,24 @@
 <script setup>
 	import { ref } from 'vue';
 	const popupInfo = ref(null);
-	
 	function clickInfo(){
-		
 		popupInfo.value.open();
-		
+	}
+	function closeInfo(){
+		popupInfo.value.close();
+	}
+	
+	const isMask = ref(true);
+	function switchMask(){
+		isMask.value = !isMask.value;
+	}
+	
+	const popupRemark = ref(null);
+	function clickRemark(){
+		popupRemark.value.open();
+	}
+	function closeRemark(){
+		popupRemark.value.close();
 	}
 </script>
 
@@ -110,7 +135,6 @@
       height: 100%;
       .img{
       	height: 100%;
-				opacity: 0;
       }
     }
   }
@@ -177,37 +201,21 @@
 }
 .popup-info{
 	background-color: white;
-	max-height: 60vh;
+	width: 100%;
 	border-radius: 20rpx 20rpx 0 0;
-	.popupTitle{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 20rpx 0;
-		.popupTitleLeft{
-			flex: 1;
-		}
-		.popupTitleMiddle{
-			flex: 5;
-			text-align: center;
-			font-size: 35rpx;
-		}
-		.popupTitleRight{
-			flex: 1;
-			text-align: center;
-			display: flex;
-			justify-content: center;
-		}
+	.scrollView{
+		max-height: 60vh;
+		width: 100%;
+	}
+	.popupItemTitle{
+		flex: 1;
+		text-align: left;
+		padding-right: 20rpx;
+		color: rgba(0, 0, 0, 0.7);
 	}
 	.popupItem{
 		display: flex;
 		padding: 15rpx 50rpx;
-		.popupItemTitle{
-			flex: 1;
-			text-align: left;
-			padding-right: 20rpx;
-			color: rgba(0, 0, 0, 0.7);
-		}
 		.popupItemContent{
 			flex: 5;
 		}
@@ -234,12 +242,51 @@
 			}
 		}
 	}
+	.popupBottum{
+		margin: 20rpx 20rpx;
+		border-radius: 20rpx;
+		padding: 30rpx;
+		color: rgba(0, 0, 0, 0.7);
+		background-color: gray;
+	}
 }
-.popupBottum{
-	margin: 20rpx 20rpx;
+.popupTitle{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20rpx 0;
+	width: 100%;
+	.popupTitleLeft{
+		flex: 1;
+	}
+	.popupTitleMiddle{
+		flex: 5;
+		text-align: center;
+		font-size: 35rpx;
+	}
+	.popupTitleRight{
+		flex: 1;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		height: 100%;
+	}
+}
+.popupRemarkView{
+	width: 500rpx;
+	background-color: white;
 	border-radius: 20rpx;
-	padding: 30rpx;
-	color: rgba(0, 0, 0, 0.7);
-	background-color: gray;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	.popupRemarkRate{
+		margin: 0rpx auto;
+		margin-bottom: 20rpx;
+	}
+	.popupRemarkBtn{
+		width: 100%;
+	}
 }
 </style>
