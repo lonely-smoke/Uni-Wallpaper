@@ -3,7 +3,7 @@
     <view class="fixbar colorBg">
       <view class="stateBar fix" :style="{height: getStatusBarHeight() + 'px'}"></view>
       <view class="titleBar fix" :style="{height: getTitleBarHeight() + 'px'}">
-        <view class="title">推荐</view>
+        <view class="title">{{title}}</view>
         <view class="search">
           <uni-icons type="search" size="21" color="gray"></uni-icons>
           <view>搜索</view>
@@ -23,6 +23,13 @@ const stateHeight = computed(() => {
 const titleHeight = computed(() => {
   getTitleBarHeight() + 'px';
 })
+
+defineProps({
+  title: {
+    type: String,
+    default: '推荐'
+  }
+});
 </script>
 
 <style lang="scss" scoped>
