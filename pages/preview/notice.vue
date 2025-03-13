@@ -1,13 +1,13 @@
 <template>
 	<view class="notice">
 		<view class="noticeTitle">
-			<uni-tag class="noticeTitleTag" type="primary"></uni-tag>
+			<uni-tag class="noticeTitleTag" text="公告" type="primary" inverted></uni-tag>
 			<view class="noticeTitleText">这是一条公告</view>
 		</view>
 		<view class="noticeDate">
 			<view class="noticeDateAuthor">咸虾米</view>
 			<view class="noticeDateDate">
-				<uni-dateformat></uni-dateformat>
+				<uni-dateformat :date="Date.now()"></uni-dateformat>
 			</view>
 		</view>
 		<view class="noticeText">
@@ -33,14 +33,14 @@
 			margin-right: 30rpx;
 		}
 		.noticeTitleText{
-			
+			font-size: 24px;
 		}
 	}
 	.noticeDate{
 		color: gray;
 		display: flex;
 		.noticeDateAuthor{
-			
+			margin-right: 20rpx;
 		}
 		.noticeDateDate{
 			
@@ -50,7 +50,7 @@
 		padding: 30rpx 0;
 	}
 	.noticeBottom{
-		
+		color: gray;
 	}
 }
 </style>

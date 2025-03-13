@@ -1,5 +1,5 @@
 export function getStatusBarHeight(){
-  return uni.getSystemInfoSync().statusBarHeight || 0;
+  return uni.getSystemInfoSync().statusBarHeight || 20;
 }
 
 export function getTitleBarHeight(){

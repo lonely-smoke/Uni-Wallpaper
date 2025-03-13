@@ -27,7 +27,7 @@
           <view class=" tab3Text">下载</view>
         </view>
       </view>
-			<view class="back" :style="{top: getStatusBarHeight() + getTitleBarHeight()}" @click="backTo">
+			<view class="back" :style="{top: getStatusBarHeight() + 'px'}" @click="backTo">
 				<uni-icons type="left"></uni-icons>
 			</view>
 		</view>
@@ -207,13 +207,14 @@
     }
 		.back{
 			position: absolute;
-			right: 30rpx;
+			left: 50rpx;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			border-radius: 80rpx;
-			height: 50rpx;
-			width: 50rpx;
+			height: 60rpx;
+			width: 60rpx;
+      background-color: rgba(255, 255, 255, 0.5);
 		}
 	}
 }

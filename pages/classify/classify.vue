@@ -1,6 +1,9 @@
 <template>
-  <view class="classify-layout colorBg">
-    <common-card v-for="index in 15"></common-card>
+  <view class="colorBg">
+    <common-navbar title="分类"></common-navbar>
+    <view class="classify-layout ">
+      <common-card v-for="index in 15"></common-card>
+    </view>
   </view>
 </template>
 
