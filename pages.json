@@ -41,6 +41,13 @@
 			"style": {
 				"navigationBarTitleText": "列表"
 			}
+		},
+		{
+			"path" : "pages/preview/notice",
+			"style" : 
+			{
+				"navigationBarTitleText" : "公告"
+			}
 		}
 	],
 	"globalStyle": {

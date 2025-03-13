@@ -27,6 +27,9 @@
           <view class=" tab3Text">下载</view>
         </view>
       </view>
+			<view class="back" :style="{top: getStatusBarHeight() + getTitleBarHeight()}" @click="backTo">
+				<uni-icons type="left"></uni-icons>
+			</view>
 		</view>
 	</view>
 	<uni-popup ref="popupInfo" type="bottom">
@@ -103,6 +106,7 @@
 
 <script setup>
 	import { ref } from 'vue';
+	import { getStatusBarHeight, getTitleBarHeight } from '@/utils/system.js'
 	const popupInfo = ref(null);
 	function clickInfo(){
 		popupInfo.value.open();
@@ -122,6 +126,10 @@
 	}
 	function closeRemark(){
 		popupRemark.value.close();
+	}
+	
+	function backTo(){
+		uni.navigateBack();
 	}
 </script>
 
@@ -197,6 +205,16 @@
         padding: 0 45rpx;
       }
     }
+		.back{
+			position: absolute;
+			right: 30rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 80rpx;
+			height: 50rpx;
+			width: 50rpx;
+		}
 	}
 }
 .popup-info{

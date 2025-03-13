@@ -22,7 +22,7 @@
       </view>
       <view class="center">
         <swiper autoplay circular vertical interval="3000">
-         <swiper-item>这是第一条公告</swiper-item>
+         <swiper-item @click="clickNotice">这是第一条公告</swiper-item>
           <swiper-item>这是第二条公告</swiper-item>
           <swiper-item>这是第三条很长很长很长很长很长很长的公告</swiper-item>
         </swiper>
@@ -42,7 +42,7 @@
       </common-title>
       <view class="gallary">
         <scroll-view scroll-x :show-scrollbar="false" enhanced>
-          <view class="photo" v-for="temp in 9">
+          <view class="photo" v-for="temp in 9" @click="preview">
             <image src="/common/images/classify2.jpg" mode="aspectFill"></image>
           </view>
         </scroll-view>
@@ -64,7 +64,25 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
+function preview(){
+	uni.navigateTo({
+		url:'/pages/preview/preview'
+	})
+}
 
+function clickNotice(){
+	uni.navigateTo({
+		url:'/pages/preview/notice'
+	})
+}
+
+const bannerImgList = ref(null);
+async function request(){
+	await uni.request({
+		url: ''
+	})
+}
 </script>
 
 <style lang="scss" scoped>
